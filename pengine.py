@@ -46,6 +46,11 @@ def NPWizard():
     os.system(f"mkdir \"{projpath}/assets/scripts\"")
     os.system(f"mkdir \"{projpath}/assets/text\"")
     os.system(f"mkdir \"{projpath}/assets/images")
+    pebf.createFile(f"{projpath}/assets/scripts/main.py", "# This will be run when opening your project in a package", True)
+    pebf.createFile(f"{projpath}/assets/include.pengine", "scripts/main.py", True)
+    pfFile = open("penginefuncs.py", "r")
+    pf = pfFile.read()
+    pebf.createFile(f"{projpath}/assets/scripts/penginefuncs.py", pf, True)
     print("Project created successfully!")
     
 
@@ -64,6 +69,7 @@ def loadProject():
         project = projectsd[projnum]
     except:
         print("Invalid number!")
+        return
     os.system(f"python3 {os.path.dirname(__file__)}/mainEngine.py {project}")
 
 def deleteProject():

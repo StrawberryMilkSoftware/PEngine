@@ -49,7 +49,9 @@ def fileWizard():
     
 def editFile():
 
-    file = input("Enter the file's path from /PROJECTNAME/assets/: ")
+    file = input("Enter the file's path from /PROJECTNAME/assets/ (defaults to scripts/main.py): ")
+    if file == "" or file == None:
+        file = "scripts/main.py"
 
     efile = open("editor.txt", "r")
     editor = efile.read()
