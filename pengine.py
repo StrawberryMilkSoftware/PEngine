@@ -4,7 +4,6 @@ import basicfuncs as pebf # Import PEngine basic functions (basicfuncs.py)
 import sys
 import os
 
-
 logo = '''
                                 python3
   _____  ______             _    pengine.py        
@@ -69,7 +68,6 @@ def loadProject():
         project = projectsd[projnum]
     except:
         print("Invalid number!")
-        return
     os.system(f"python3 {os.path.dirname(__file__)}/mainEngine.py {project}")
 
 def deleteProject():
